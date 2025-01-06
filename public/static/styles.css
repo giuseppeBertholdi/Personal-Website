@@ -6,19 +6,22 @@
 }
 
 body {
-  background: linear-gradient(to right, #a28dc4, #68cfbe);            
+  background: linear-gradient(to right, #a28dc4, #68cfbe);
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Garante que os elementos fiquem em coluna */
+  justify-content: space-between; /* Faz com que o container se estique para o topo e o footer fique no final */
   align-items: center;
   height: 100vh;
   color: #333;
   font-size: 1.2rem;
-  overflow: hidden; /* Evita barras de rolagem indesejadas */
+  overflow: hidden;
 }
+
 
 .container {
   background: #ffffff;
   border-radius: 25px;
+  margin-top: 10px;
   padding: 60px;
   text-align: center;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -130,3 +133,15 @@ body {
     transform: rotate(-10deg);
   }
 }
+
+footer {
+  background: linear-gradient(to right, #9b84c0, #4bb8a6);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 40px;
+  width: 100%; /* Garante que ocupe toda a largura */
+  position: relative; /* Mantém a posição normal */
+  clear: both; /* Evita sobreposição com outros elementos */}
+
