@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #a28dc4, #68cfbe);            
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+  font-size: 1.2rem;
+  overflow: hidden; /* Evita barras de rolagem indesejadas */
+}
+
+.container {
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+  transform: scale(1);
+  animation: fadeInUp 1s ease-out;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  color: #6c757d;
+  margin-bottom: 20px;
+  font-weight: 700;
+  animation: fadeIn 1s ease-out;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #5d6a7d;
+  margin-bottom: 40px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.button {
+  text-decoration: none;
+  display: inline-block;
+  background: #4e73df;
+  color: #fff;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+  background: #2c3e9e;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  background: #1c2d6d;
+  transform: translateY(2px);
+}
+
+.button span {
+  display: block;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: transparent;
+  border: 1px dashed #6c757d;
+  border-radius: 25px;
+  z-index: -1;
+  animation: waveEffect 5s infinite alternate;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes waveEffect {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
