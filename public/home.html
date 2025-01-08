@@ -54,42 +54,36 @@
 
         /* Botões fixos no topo */
         .button-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.5); /* Fundo branco semitransparente */
-            backdrop-filter: blur(8px); /* Efeito de desfoque */
-            padding: 10px 40px; /* Espaçamento interno */
-            z-index: 1000;
-            border-bottom: 2px solid #47b19f;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            
-        }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ajusta o espaçamento dos itens */
+    background: rgba(255, 255, 255, 0.5); /* Fundo branco semitransparente */
+    backdrop-filter: blur(8px); /* Efeito de desfoque */
+    padding: 10px 20px; /* Espaçamento interno ajustado */
+    z-index: 1000;
+    border-bottom: 2px solid #47b19f;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
 
-        /* Logo no lado esquerdo */
-        .button-container .logo {
-            height: 100px; /* Tamanho aumentado da logo */
-            object-fit: contain; /* Mantém proporção */
-            margin-right: 60px; /* Espaço entre logo e botões */
-        }
+.button-container .logo {
+    height: 50px; /* Tamanho da logo ajustável */
+    object-fit: contain;
+}
 
-        /* Botões */
-        .button-container .buttons {
-            display: flex;
-            gap: 60px; /* Espaçamento maior entre os botões */
-        }
+.button-container .buttons {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+}
 
-        .button-container a {
-            text-decoration: none;
-        }
-
-        .button-container button {
+.button-container button {
             background: linear-gradient(to right, #9cd3ca, #5abeae);
             color: white;
-            margin-top: 10px;
+            margin-top: 20px;
             font-family: 'Poppins', sans-serif;
             font-size: 18px; /* Tamanho maior dos botões */
             padding: 15px 30px;
@@ -102,56 +96,101 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .button-container button:hover {
-            background-color: #247064;
-            transform: translateY(-2px);
-        }
+.button-container button:hover {
+  background-color: #247064;
+  transform: translateY(-2px); /* Leve aumento no hover */
+}
+
+.button-container button:active {
+    transform: scale(0.95); /* Leve redução no clique */
+}
+
+/* Ajustes para telas menores */
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Itens em coluna */
+        align-items: center; /* Centraliza os itens */
+        padding: 10px 15px; /* Reduz o padding */
+    }
+
+    .button-container .logo {
+        margin-bottom: 10px; /* Espaçamento entre logo e botões */
+        height: 40px; /* Reduz tamanho da logo */
+    }
+
+    .button-container .buttons {
+        flex-wrap: wrap; /* Permite que botões quebrem linha */
+        justify-content: center; /* Centraliza os botões */
+        gap: 5px; /* Reduz espaçamento entre botões */
+    }
+
+    .button-container button {
+        font-size: 12px; /* Texto menor para botões */
+        padding: 6px 12px; /* Botões menores */
+    }
+}
+
+/* Estilos para telas muito pequenas */
+@media (max-width: 480px) {
+    .button-container {
+        padding: 8px 10px; /* Ainda menor padding */
+    }
+
+    .button-container .logo {
+        height: 35px; /* Logo menor */
+    }
+
+    .button-container button {
+        font-size: 10px; /* Texto menor */
+        padding: 4px 10px; /* Botões ainda menores */
+    }
+}
 
         /* Espaço para que o conteúdo não sobreponha os botões */
         .spacer {
             margin-top: 80px;
         }
 
-        /* Conteúdo da página */
-        .content-container {
+         /* Conteúdo da página */
+         .content-container {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 25px;
+            flex-direction: column; /* Mudança para layout vertical em telas menores */
+            max-width: 90%; /* Reduzido para caber na tela */
+            margin: 20px auto;
+            padding: 20px;
             background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .text-container {
-            width: 65%; /* Ocupa 65% do container */
+            width: 100%; /* Ocupa toda a largura */
             text-align: justify;
+            margin-bottom: 20px; /* Espaço entre texto e imagem */
         }
 
         .text-container p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
+            font-size: 16px; /* Ajustado para telas menores */
+            line-height: 1.6;
         }
 
         .text-container strong {
-            font-size: 20px;
+            font-size: 18px; /* Ajustado */
             color: #62c2b2;
             display: block;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .image-container {
-            width: 30%; /* A imagem ocupa 30% do container */
+            width: 100%; /* Ocupa toda a largura */
             text-align: center;
         }
 
         .image-container img {
-            width: 100%; /* A imagem ocupa 100% da largura do seu contêiner */
+            width: 100%; /* Ocupa toda a largura */
             height: auto;
-            border-radius: 10px; /* Bordas arredondadas na imagem */
+            border-radius: 10px;
         }
         /* From Uiverse.io by elisapi */ 
 .card {
@@ -240,6 +279,32 @@
             padding: 20px;
             font-size: 14px;
             margin-top: 40px;
+        }
+
+          /* Media Queries para dispositivos menores */
+          @media (min-width: 600px) {
+            .content-container {
+                flex-direction: row; /* Mantém horizontal em telas maiores */
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+
+            .text-container {
+                width: 65%;
+            }
+
+            .image-container {
+                width: 30%;
+            }
+
+            .button-container .buttons {
+                gap: 20px;
+            }
+
+            .button-container button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
