@@ -237,6 +237,128 @@
             font-size: 14px;
             margin-top: 40px;
         }
+        @media (max-width: 768px) {
+    /* Ajuste geral do body */
+    body {
+        font-size: 14px; /* Texto um pouco menor */
+    }
+
+    /* Ajuste da .button-seccontainer */
+    .button-seccontainer {
+        flex-direction: column; /* Coloca os itens em coluna */
+        align-items: center; /* Centraliza logo e botões */
+        padding: 10px 20px; /* Reduz padding */
+    }
+
+    .button-seccontainer .logo {
+        height: 60px; /* Reduz o tamanho da logo */
+        margin-bottom: 10px; /* Adiciona espaço entre a logo e os botões */
+        margin-right: 0; /* Remove o espaço extra */
+    }
+
+    .button-seccontainer .buttons {
+        flex-wrap: wrap; /* Permite que os botões quebrem linha */
+        gap: 10px; /* Reduz o espaçamento entre botões */
+        justify-content: center;
+    }
+
+    .button-seccontainer button {
+        font-size: 14px; /* Texto menor nos botões */
+        padding: 10px 20px; /* Botões mais compactos */
+    }
+
+    /* Ajuste da .content-container */
+    .content-container {
+        flex-direction: column; /* Coloca imagem e texto em coluna */
+        align-items: center; /* Centraliza os itens */
+        margin: 120px 20px; /* Reduz margens laterais */
+        padding: 15px; /* Padding reduzido */
+    }
+
+    .text-container {
+        width: 100%; /* Ocupa 100% da largura */
+    }
+
+    .image-container {
+        width: 80%; /* Ocupa menos espaço em telas menores */
+        margin-bottom: 20px; /* Espaçamento entre imagem e texto */
+    }
+
+    /* Ajuste dos botões */
+    .button-container {
+        flex-wrap: wrap; /* Permite quebra de linha */
+        gap: 10px; /* Reduz espaçamento entre botões */
+    }
+
+    /* Ajuste dos ícones sociais */
+    .card {
+        gap: 10px; /* Reduz o espaço entre ícones */
+    }
+
+    .socialContainer {
+        width: 40px; /* Ícones menores */
+        height: 40px;
+    }
+
+    .socialSvg {
+        width: 14px; /* Ajusta o tamanho do SVG */
+    }
+    .spacer {
+        margin-top: 140px; /* Mais espaço para dispositivos menores */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para telas muito pequenas */
+    .button-seccontainer {
+        padding: 8px 10px; /* Padding ainda menor */
+    }
+
+    .button-seccontainer .logo {
+        height: 50px; /* Logo menor ainda */
+    }
+
+    .button-seccontainer button {
+        font-size: 12px; /* Botões mais pequenos */
+        padding: 8px 15px; /* Padding mais reduzido */
+    }
+
+    .content-container {
+        margin: 200px 10px; /* Margens menores */
+        padding: 10px; /* Padding menor */
+    }
+
+    .image-container {
+        width: 100%; /* Imagem ocupa toda a largura */
+    }
+
+    .text-container p {
+        font-size: 16px; /* Texto menor */
+        line-height: 1.6;
+    }
+
+    .card {
+        gap: 5px; /* Ícones sociais ainda mais próximos */
+    }
+
+    .socialContainer {
+        width: 35px; /* Ícones ainda menores */
+        height: 35px;
+    }
+
+    .socialSvg {
+        width: 12px; /* Ajusta tamanho do SVG */
+    }
+
+    footer {
+        font-size: 12px; /* Texto menor no rodapé */
+        padding: 15px;
+    }
+    .spacer {
+        margin-top: 160px; /* Mais espaço para dispositivos menores */
+    }
+}
+
     </style>
 </head>
 <body>

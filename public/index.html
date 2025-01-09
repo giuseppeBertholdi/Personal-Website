@@ -1,219 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Berthausis Company</title>
-  <!-- <link rel="stylesheet" href="/static/styles.css"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berthausis</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Berthausis</h1>
+            </div>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero">
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="/images/17.jpg" alt="Imagem 1" class="carousel-image">
+                <img src="/images/_MG_7710 (5).jpg" alt="Imagem 2" class="carousel-image">
+                <img src="/images/_MG_7725 (2).jpg" alt="Imagem 3" class="carousel-image">
+            </div>
+            <button class="carousel-prev">&#10094;</button>
+            <button class="carousel-next">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2>Sobre a Berthausis</h2>
+            <p>Somos uma empresa dedicada a transformar a visão de nossos clientes, oferecendo soluções inovadoras em tecnologia e digitalização. Nossa missão é levar sua empresa para o próximo nível.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="section">
+      <div class="container">
+          <h2>Nossos Serviços</h2>
+          <div class="services">
+              <div class="service-card">
+                  <h3>Consultoria Digital</h3>
+                  <p>Ajudamos sua empresa a alcançar resultados com soluções digitais personalizadas.</p>
+                  <a href="consultoria.html" class="btn">Saiba Mais</a>
+              </div>
+              <div class="service-card">
+                  <h3>Desenvolvimento Web</h3>
+                  <p>Construímos websites modernos e responsivos para sua presença online.</p>
+                  <a href="desenvolvimento.html" class="btn">Saiba Mais</a>
+              </div>
+              <div class="service-card">
+                  <h3>Gestão de Projetos</h3>
+                  <p>Gerenciamos e entregamos projetos com eficiência, garantindo que seu planejamento seja cumprido.</p>
+                  <a href="gestao.html" class="btn">Saiba Mais</a>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+<!-- Contato Section -->
+<section id="contato" class="section contato">
   <div class="container">
-    <h1 class="title">Bem-Vindo a Berthausis</h1>
-    <p class="subtitle">Uma jornada de inovação e descobertas espera por você.</p>
-    
-    <div class="buttons">
-      <a href="/home" class="button">
-        <span>Flávia Bertholdi</span>
-        <span>Terapeuta | Educação Corporativa</span>
-      </a>
-      <a href="" class="button">
-        <span>Assistência de TI,</span>
-        <span>Banco de dados</span>
-      </a>    
-  </div></div>
-  <footer>
-    <p>&copy; 2025 Giuseppe Bertholdi Produções. Todos os direitos reservados.</p>
-  </footer>
+      <h2>Entre em Contato Conosco</h2>
+      <p>Tem uma dúvida ou sugestão? Preencha o formulário abaixo e entraremos em contato com você!</p>
+      <div class="form-container">
+          <form>
+              <div class="form-group">
+                  <input type="text" placeholder="Seu Nome" required>
+              </div>
+              <div class="form-group">
+                  <input type="email" placeholder="Seu Email" required>
+              </div>
+              <div class="form-group">
+                  <textarea placeholder="Sua Mensagem" required></textarea>
+              </div>
+              <div class="form-group">
+                  <button type="submit">Enviar</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Berthausis. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Carrossel de Imagens com setas
+        $(document).ready(function(){
+            let currentIndex = 0;
+            const images = $(".carousel-image");
+            const totalImages = images.length;
+
+            function showImage(index) {
+                if(index >= totalImages) currentIndex = 0;
+                if(index < 0) currentIndex = totalImages - 1;
+                images.hide();
+                $(images[currentIndex]).show();
+            }
+
+            $(".carousel-next").click(function(){
+                currentIndex++;
+                showImage(currentIndex);
+            });
+
+            $(".carousel-prev").click(function(){
+                currentIndex--;
+                showImage(currentIndex);
+            });
+
+            // Exibir a primeira imagem ao carregar
+            showImage(currentIndex);
+        });
+    </script>
 </body>
 </html>
-
-<style>
-/* Estilos base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
-body {
-  background: linear-gradient(to right, #a28dc4, #68cfbe);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  color: #333;
-  font-size: 1.2rem;
-  overflow: hidden;
-}
-
-.container {
-  background: #ffffff;
-  border-radius: 25px;
-  margin-top: 20px;
-  padding: 60px;
-  text-align: center;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 900px;
-  position: relative;
-  transform: scale(1);
-  animation: fadeInUp 1s ease-out;
-  min-height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title {
-  font-size: 3.5rem;
-  color: #6c757d;
-  margin-bottom: 20px;
-  font-weight: 700;
-  animation: fadeIn 1s ease-out;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  color: #5d6a7d;
-  margin-bottom: 40px;
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.button {
-  text-decoration: none;
-  display: inline-block;
-  background: #4e73df;
-  color: #fff;
-  padding: 18px 40px;
-  border-radius: 50px;
-  font-size: 1.3rem;
-  font-weight: 600;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.button:hover {
-  background: #2c3e9e;
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.button:active {
-  background: #1c2d6d;
-  transform: translateY(2px);
-}
-
-.button span {
-  display: block;
-}
-
-.container::before,
-.container::after {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
-  background: transparent;
-  border: 1px dashed #6c757d;
-  border-radius: 25px;
-  z-index: -1;
-  animation: waveEffect 5s infinite alternate;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes waveEffect {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: rotate(-10deg);
-  }
-}
-
-footer {
-  background: linear-gradient(to right, #9b84c0, #4bb8a6);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  margin-top: 40px;
-  width: 100%;
-  position: relative;
-  clear: both;
-}
-
-/* Estilos Responsivos */
-@media (max-width: 768px) {
-  .container {
-    padding: 40px 20px;
-    min-height: 400px;
-  }
-
-  .title {
-    font-size: 2.5rem;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .buttons {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .button {
-    font-size: 1.1rem;
-    padding: 15px 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .button {
-    padding: 12px 20px;
-    font-size: 1rem;
-  }
-}
-</style>

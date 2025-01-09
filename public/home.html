@@ -24,6 +24,7 @@
             background: linear-gradient(to right, #a28dc4, #68cfbe);            
             background-size: cover;
             background-position: center;
+            padding-top: calc(180px + var(--button-container-height, 60px)); /* Altura do header somada à altura da barra */
             background-repeat: no-repeat;
             color: white;
             text-align: center;
@@ -52,40 +53,43 @@
             font-weight: 300;
         }
 
-        /* Botões fixos no topo */
+        /* Header */
         .button-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Ajusta o espaçamento dos itens */
-    background: rgba(255, 255, 255, 0.5); /* Fundo branco semitransparente */
-    backdrop-filter: blur(8px); /* Efeito de desfoque */
-    padding: 10px 20px; /* Espaçamento interno ajustado */
-    z-index: 1000;
-    border-bottom: 2px solid #47b19f;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.5); /* Fundo branco semitransparente */
+            backdrop-filter: blur(8px); /* Efeito de desfoque */
+            padding: 10px 40px; /* Espaçamento interno */
+            z-index: 1000;
+            border-bottom: 2px solid #47b19f;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.button-container .logo {
-    height: 50px; /* Tamanho da logo ajustável */
-    object-fit: contain;
-}
+        .button-container .logo {
+            height: 100px;
+            object-fit: contain;
+            margin-right: 60px;
+        }
 
-.button-container .buttons {
-    display: flex;
-    gap: 10px; /* Espaçamento entre os botões */
-}
+        .button-container .buttons {
+            display: flex;
+            gap: 60px;
+        }
 
-.button-container button {
+        .button-container a {
+            text-decoration: none;
+        }
+
+        .button-container button {
             background: linear-gradient(to right, #9cd3ca, #5abeae);
             color: white;
-            margin-top: 20px;
             font-family: 'Poppins', sans-serif;
-            font-size: 18px; /* Tamanho maior dos botões */
+            font-size: 18px;
+            margin-top: 20px;
             padding: 15px 30px;
             border: none;
             border-radius: 8px;
@@ -96,15 +100,10 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-.button-container button:hover {
-  background-color: #247064;
-  transform: translateY(-2px); /* Leve aumento no hover */
-}
-
-.button-container button:active {
-    transform: scale(0.95); /* Leve redução no clique */
-}
-
+        .button-container button:hover {
+            background-color: #247064;
+            transform: translateY(-2px);
+        }
 /* Ajustes para telas menores */
 /* Estilos para telas menores */
 @media (max-width: 768px) {
@@ -282,30 +281,128 @@
         }
 
           /* Media Queries para dispositivos menores */
-          @media (min-width: 600px) {
-            .content-container {
-                flex-direction: row; /* Mantém horizontal em telas maiores */
-                justify-content: space-between;
-                align-items: flex-start;
-            }
+ 
+          @media (max-width: 768px) {
+    /* Ajuste geral do body */
+    body {
+        font-size: 14px; /* Texto um pouco menor */
+    }
 
-            .text-container {
-                width: 65%;
-            }
+    /* Ajuste da .button-container */
+    .button-container {
+        flex-direction: column; /* Coloca os itens em coluna */
+        align-items: center; /* Centraliza logo e botões */
+        padding: 10px 20px; /* Reduz padding */
+    }
 
-            .image-container {
-                width: 30%;
-            }
+    .button-container .logo {
+        height: 60px; /* Reduz o tamanho da logo */
+        margin-bottom: 10px; /* Adiciona espaço entre a logo e os botões */
+        margin-right: 0; /* Remove o espaço extra */
+    }
 
-            .button-container .buttons {
-                gap: 20px;
-            }
+    .button-container .buttons {
+        flex-wrap: wrap; /* Permite que os botões quebrem linha */
+        gap: 10px; /* Reduz o espaçamento entre botões */
+        justify-content: center;
+    }
 
-            .button-container button {
-                font-size: 16px;
-                padding: 10px 20px;
-            }
-        }
+    .button-container button {
+        font-size: 14px; /* Texto menor nos botões */
+        padding: 10px 20px; /* Botões mais compactos */
+    }
+
+    /* Ajuste da .content-container */
+    .content-container {
+        flex-direction: column; /* Coloca imagem e texto em coluna */
+        align-items: center; /* Centraliza os itens */
+        margin: 120px 20px; /* Reduz margens laterais */
+        padding: 15px; /* Padding reduzido */
+    }
+
+    .text-container {
+        width: 100%; /* Ocupa 100% da largura */
+    }
+
+    .image-container {
+        width: 80%; /* Ocupa menos espaço em telas menores */
+        margin-bottom: 20px; /* Espaçamento entre imagem e texto */
+    }
+
+    /* Ajuste dos botões */
+    .button-container {
+        flex-wrap: wrap; /* Permite quebra de linha */
+        gap: 10px; /* Reduz espaçamento entre botões */
+    }
+
+    /* Ajuste dos ícones sociais */
+    .card {
+        gap: 10px; /* Reduz o espaço entre ícones */
+    }
+
+    .socialContainer {
+        width: 40px; /* Ícones menores */
+        height: 40px;
+    }
+
+    .socialSvg {
+        width: 14px; /* Ajusta o tamanho do SVG */
+    }
+    .spacer {
+        margin-top: 140px; /* Mais espaço para dispositivos menores */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para telas muito pequenas */
+    .button-container {
+        padding: 8px 10px; /* Padding ainda menor */
+    }
+
+    .button-container .logo {
+        height: 50px; /* Logo menor ainda */
+    }
+
+    .button-container button {
+        font-size: 12px; /* Botões mais pequenos */
+        padding: 8px 15px; /* Padding mais reduzido */
+    }
+
+    .content-container {
+        margin: 200px 10px; /* Margens menores */
+        padding: 10px; /* Padding menor */
+    }
+
+    .image-container {
+        width: 100%; /* Imagem ocupa toda a largura */
+    }
+
+    .text-container p {
+        font-size: 16px; /* Texto menor */
+        line-height: 1.6;
+    }
+
+    .card {
+        gap: 5px; /* Ícones sociais ainda mais próximos */
+    }
+
+    .socialContainer {
+        width: 35px; /* Ícones ainda menores */
+        height: 35px;
+    }
+
+    .socialSvg {
+        width: 12px; /* Ajusta tamanho do SVG */
+    }
+
+    footer {
+        font-size: 12px; /* Texto menor no rodapé */
+        padding: 15px;
+    }
+    .spacer {
+        margin-top: 160px; /* Mais espaço para dispositivos menores */
+    }
+}
     </style>
 </head>
 <body>

@@ -1,147 +1,280 @@
+/* Reset e Configurações Globais */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
 }
 
 body {
-  background: linear-gradient(to right, #a28dc4, #68cfbe);
-  display: flex;
-  flex-direction: column; /* Garante que os elementos fiquem em coluna */
-  justify-content: space-between; /* Faz com que o container se estique para o topo e o footer fique no final */
-  align-items: center;
-  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f3f4f6;
   color: #333;
-  font-size: 1.2rem;
-  overflow: hidden;
-}
-
-
-.container {
-  background: #ffffff;
-  border-radius: 25px;
-  margin-top: 20px;
-  padding: 60px;
-  text-align: center;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 900px;
-  position: relative;
-  transform: scale(1);
-  animation: fadeInUp 1s ease-out;
-  min-height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title {
-  font-size: 3.5rem;
-  color: #6c757d;
-  margin-bottom: 20px;
-  font-weight: 700;
-  animation: fadeIn 1s ease-out;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  color: #5d6a7d;
-  margin-bottom: 40px;
-  font-weight: 400;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-.buttons {
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #1a1a2e, #16213e);
+  padding: 20px 30px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+header:hover {
+  background: linear-gradient(90deg, #0f3460, #1a1a2e);
+}
+
+header nav {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.button {
+header .logo h1 {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+}
+
+header ul li {
+  margin-left: 40px;
+  position: relative;
+}
+
+header ul li a {
   text-decoration: none;
-  display: inline-block;
-  background: #4e73df;
-  color: #fff;
-  padding: 18px 40px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+
+header ul li a:hover {
+  color: #00d9ff;
+  transform: translateY(-3px);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background-image: url('background.jpg'); /* Substitua pela sua imagem */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h2 {
+  font-size: 60px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.hero .btn {
+  padding: 15px 40px;
+  background: linear-gradient(90deg, #00d9ff, #0078ff);
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
   border-radius: 50px;
-  font-size: 1.3rem;
-  font-weight: 600;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  transition: background 0.3s, transform 0.3s;
 }
 
-.button:hover {
-  background: #2c3e9e;
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+.hero .btn:hover {
+  background: linear-gradient(90deg, #0078ff, #004a99);
+  transform: scale(1.1);
 }
 
-.button:active {
-  background: #1c2d6d;
-  transform: translateY(2px);
+/* Seção Geral */
+.section {
+  padding: 100px 20px;
+  text-align: center;
+  background: #ffffff;
 }
 
-.button span {
-  display: block;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.container::before,
-.container::after {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
-  background: transparent;
-  border: 1px dashed #6c757d;
-  border-radius: 25px;
-  z-index: -1;
-  animation: waveEffect 5s infinite alternate;
+/* Serviços */
+.services {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.service-card {
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 40px;
+  width: 30%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s ease;
+  position: relative;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes waveEffect {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: rotate(-10deg);
-  }
+.service-card h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #0078ff;
+  font-weight: bold;
 }
 
+.service-card p {
+  font-size: 16px;
+  color: #555;
+}
+
+.service-card .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #0078ff;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.service-card .btn:hover {
+  background-color: #004a99;
+  transform: scale(1.05);
+}
+
+/* Contato */
+.contato {
+  background: #f4f7fc;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contato h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contato p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.form-container {
+  background-color: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  border-color: #0078ff;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #0078ff;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #004a99;
+  transform: translateY(-3px);
+}
+
+/* Footer */
 footer {
-  background: linear-gradient(to right, #9b84c0, #4bb8a6);
+  background-color: #1a1a2e;
   color: white;
   text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  margin-top: 40px;
-  width: 100%; /* Garante que ocupe toda a largura */
-  position: relative; /* Mantém a posição normal */
-  clear: both; /* Evita sobreposição com outros elementos */}
+  padding: 30px;
+  margin-top: 60px;
+  font-size: 16px;
+}
 
+footer a {
+  color: #00d9ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #0078ff;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 90%;
+  }
+}
