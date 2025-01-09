@@ -153,44 +153,63 @@
 
          /* Conteúdo da página */
          .content-container {
-            display: flex;
-            flex-direction: column; /* Mudança para layout vertical em telas menores */
-            max-width: 90%; /* Reduzido para caber na tela */
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+    display: flex; /* Layout horizontal */
+    flex-direction: row; /* Imagem e texto lado a lado */
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 20px; /* Espaço entre texto e imagem */
+    align-items: center; /* Centraliza verticalmente */
+}
 
-        .text-container {
-            width: 100%; /* Ocupa toda a largura */
-            text-align: justify;
-            margin-bottom: 20px; /* Espaço entre texto e imagem */
-        }
+.text-container {
+    flex: 1; /* O texto ocupa espaço proporcional */
+    text-align: justify;
+}
 
-        .text-container p {
-            font-size: 16px; /* Ajustado para telas menores */
-            line-height: 1.6;
-        }
+.text-container p {
+    font-size: 16px;
+    line-height: 1.6;
+}
 
-        .text-container strong {
-            font-size: 18px; /* Ajustado */
-            color: #62c2b2;
-            display: block;
-            margin-bottom: 10px;
-        }
+.text-container strong {
+    font-size: 18px;
+    color: #62c2b2;
+    display: block;
+    margin-bottom: 10px;
+}
 
-        .image-container {
-            width: 100%; /* Ocupa toda a largura */
-            text-align: center;
-        }
+.image-container {
+    flex: 0 0 40%; /* A imagem ocupa 40% da largura do container */
+    text-align: center;
+}
 
-        .image-container img {
-            width: 100%; /* Ocupa toda a largura */
-            height: auto;
-            border-radius: 10px;
-        }
+.image-container img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover; /* Garante que a imagem não distorça */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Empilha texto e imagem em telas menores */
+        align-items: flex-start; /* Alinhamento padrão em colunas */
+    }
+
+    .image-container {
+        width: 100%; /* A imagem ocupa toda a largura */
+    }
+
+    .image-container img {
+        width: 100%;
+    }
+}
+
         /* From Uiverse.io by elisapi */ 
 .card {
   width: fit-content;
