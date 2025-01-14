@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em Desenvolvimento</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        .content-container {
+            display: flex;
+            /* margin-top: 20px; */
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 900px;
+            margin: 140px auto;
+            margin-block-end: 40px;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .heading {
+            font-size: 3rem;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 20px;
+            color: #333;
+            animation: bounce 2s infinite;
+        }
+
+        .message {
+            font-family: 'Courier New', Courier, monospace;  
+            font-size: 1.5rem;
+            color: #333;
+            animation: slideIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="heading">Em Desenvolvimento</h1>
+        <p class="message">DeBene Tecnologia</p>
+    </div>
+
+</body>
+</html>

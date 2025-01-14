@@ -3,124 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Berthausis</title>
-    <link rel="stylesheet" href="/static/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Navbar -->
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Berthausis</h1>
-            </div>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+    <link rel="website icon" type="png"
+    href="/images/BB-removebg-preview.png">
+    <style>
+        /* Estilização geral */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: auto; /* Mudando para auto para permitir rolagem */
+            overflow-y: auto; /* Permite rolar a página */
+        }
 
-    <!-- Hero Section with Carousel -->
-    <section class="hero">
-        <div class="carousel">
-            <div class="carousel-images">
-                <img src="/images/image1.jpeg" alt="Imagem 1" class="carousel-image">
-                <img src="/images/image2.jpeg" alt="Imagem 2" class="carousel-image">
-                <img src="/images/image3.jpeg" alt="Imagem 3" class="carousel-image">
-            </div>
-            <button class="carousel-prev">&#10094;</button>
-            <button class="carousel-next">&#10095;</button>
-        </div>
-    </section>
+        h1, h3 {
+            margin: 0;
+        }
 
-    <!-- About Section -->
-    <section id="sobre" class="section">
-        <div class="container">
-            <h2>Sobre a Berthausis</h2>
-            <p>Somos uma empresa dedicada a transformar a visão de nossos clientes, oferecendo soluções inovadoras em tecnologia e saúde mental. Nossa missão é levar sua empresa e você para o próximo nível.</p>
-        </div>
-    </section>
+        p {
+            margin: 10px 0 0;
+        }
 
-    <!-- Services Section -->
-    <section id="servicos" class="section">
-      <div class="container">
-          <h2>Nossos Serviços</h2>
-          <div class="services">
-              <div class="service-card">
-                  <h3>Terapeuta | Educação Corporativa</h3>
-                  <p>Ajudamos sua empresa a alcançar resultados com soluções digitais personalizadas.</p>
-                  <a href="home.html" class="btn">Saiba Mais</a>
-              </div>
-              <div class="service-card">
-                  <h3>Desenvolvimento Web</h3>
-                  <p>Construímos websites modernos e responsivos para sua presença online.</p>
-                  <a href="desenvolvimento.html" class="btn">Saiba Mais</a>
-              </div>
-      </div>
-  </section>
-  
-<!-- Contato Section -->
-<section id="contato" class="section contato">
-  <div class="container">
-      <h2>Entre em Contato Conosco</h2>
-      <p>Tem uma dúvida ou sugestão? Preencha o formulário abaixo e entraremos em contato com você!</p>
-      <div class="form-container">
-          <form>
-              <div class="form-group">
-                  <input type="text" placeholder="Seu Nome" required>
-              </div>
-              <div class="form-group">
-                  <input type="email" placeholder="Seu Email" required>
-              </div>
-              <div class="form-group">
-                  <textarea placeholder="Sua Mensagem" required></textarea>
-              </div>
-              <div class="form-group">
-                  <button type="submit">Enviar</button>
-              </div>
-          </form>
-      </div>
-  </div>
-</section>
+        /* Container principal com imagem de fundo */
+        .berthausis-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto; /* Ajustado para altura automática */
+            background-color: #f5f7fa;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+        }
 
+        .berthausis-logo img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Berthausis. Todos os direitos reservados.</p>
-    </footer>
+        .berthausis-content {
+            padding: 20px;
+        }
 
-    <script src="script.js"></script>
+        .berthausis-content h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
 
-    <script>
-        // Carrossel de Imagens com setas
-        $(document).ready(function(){
-            let currentIndex = 0;
-            const images = $(".carousel-image");
-            const totalImages = images.length;
+        .berthausis-content p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
 
-            function showImage(index) {
-                if(index >= totalImages) currentIndex = 0;
-                if(index < 0) currentIndex = totalImages - 1;
-                images.hide();
-                $(images[currentIndex]).show();
+        /* Botão de chamada para ação */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #0077ff;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #005bbd;
+            transform: scale(1.05);
+        }
+
+        /* Seção de serviços */
+        .services {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+            flex-grow: 1;
+            align-items: center;
+            flex-wrap: nowrap; /* Impede que os containers quebrem para a linha seguinte */
+        }
+
+        .container {
+            width: 600px;
+            height: 250px; /* Limitando a altura */
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 15px;
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px; /* Adiciona margem entre os itens */
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon img {
+            width: 120px; /* Ajustando para não sobrecarregar a área */
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .tech .button {
+            background: #0077ff;
+        }
+
+        .tech .button:hover {
+            background: #005bbd;
+        }
+
+        .mental-health .button {
+            background: #ff4c61;
+        }
+
+        .mental-health .button:hover {
+            background: #d43a4d;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .berthausis-container {
+                height: auto;
+                margin-top: 10px;
+                padding: 10px;
             }
 
-            $(".carousel-next").click(function(){
-                currentIndex++;
-                showImage(currentIndex);
-            });
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
 
-            $(".carousel-prev").click(function(){
-                currentIndex--;
-                showImage(currentIndex);
-            });
+            .container {
+                width: 90%; /* Reduz a largura em telas menores */
+                height: auto;
+                margin-top: 10px;
+            }
 
-            // Exibir a primeira imagem ao carregar
-            showImage(currentIndex);
-        });
-    </script>
+            .berthausis-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .berthausis-content p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .berthausis-content h1 {
+                font-size: 1.2rem;
+            }
+
+            .berthausis-content p {
+                font-size: 0.85rem;
+            }
+
+            .container {
+                width: 100%; /* Largura total para telas pequenas */
+                padding: 10px;
+            }
+
+            .icon img {
+                width: 100px;
+                height: 80px;
+            }
+
+            .title {
+                font-size: 1.2rem;
+            }
+
+            .description {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="berthausis-container">
+        <div class="berthausis-content">
+            <h1>Bem-Vindo ao Grupo Berthausis</h1>
+            <p>
+                Na Berthausis, acreditamos que a tecnologia pode ser uma poderosa aliada na promoção da saúde mental. Desenvolvemos soluções digitais que equilibram a produtividade com o bem-estar, criando ambientes de trabalho mais humanos, sustentáveis e acolhedores para todos.
+            </p>
+        </div>
+    </div>
+    
+    <div class="services">
+        <div class="container tech">
+            <div class="icon">
+                <img src="images/debene-removebg-preview.png" alt="DeBene Tecnologia">
+            </div>            
+            <div class="title">DeBene Tecnologia</div>
+            <div class="description">
+                Suporte e Gestão de Ambientes: Datasul TOTVS, PROGRESS, ORACLE e SQL
+            </div>
+            <a href="debene.html" class="button">Explorar Agora</a>
+        </div>
+
+        <div class="container mental-health">
+            <div class="icon">
+                <img src="/images/flaviaFundoLogo-removebg-preview.png" alt="Flavia Bertholdi">
+            </div>
+            <div class="title">Flavia Bertholdi</div>
+            <div class="description">
+                Ajudamos sua empresa a alcançar resultados com soluções digitais personalizadas.
+            </div>
+            <a href="home.html" class="button">Saiba Mais</a>
+        </div>
+    </div>
 </body>
 </html>
