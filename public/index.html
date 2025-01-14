@@ -18,7 +18,8 @@
             flex-direction: column;
             align-items: center;
             height: auto; /* Mudando para auto para permitir rolagem */
-            overflow-y: auto; /* Permite rolar a página */
+            overflow-y: hidden;
+            overflow-x: hidden; /* Permite rolar a página */
         }
 
         h1, h3 {
@@ -31,12 +32,12 @@
 
         /* Container principal com imagem de fundo */
         .berthausis-container {
-            margin-top: 20px;
+            margin-top: 10px;
+            left: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: auto; /* Ajustado para altura automática */
             background-color: #f5f7fa;
             border-radius: 15px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
@@ -45,7 +46,9 @@
             width: 100%;
             text-align: center;
             padding: 20px;
-        }
+}
+
+        
 
         .berthausis-logo img {
             max-width: 200px;
@@ -59,7 +62,8 @@
         }
 
         .berthausis-content h1 {
-            font-size: 2rem;
+            font-size: 2.3rem;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             color: #333;
             margin-bottom: 20px;
             font-weight: bold;
@@ -110,7 +114,7 @@
             width: 600px;
             height: 250px; /* Limitando a altura */
             padding: 20px;
-            margin-top: 10px;
+            margin-top: 15px;
             border-radius: 15px;
             background: #ffffff;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -171,15 +175,27 @@
         }
 
         .mental-health .button {
-            background: #ff4c61;
+            background: #85d4d0;
         }
 
         .mental-health .button:hover {
-            background: #d43a4d;
+            background: #3ad4c7;
+        }
+        footer {
+            background: linear-gradient(to right, #6e79b9, #64ddc9);            
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            margin-top: 12px;
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
+            .body{
+                overflow-y: scroll;
+            }
             .berthausis-container {
                 height: auto;
                 margin-top: 10px;
@@ -207,6 +223,9 @@
         }
 
         @media (max-width: 480px) {
+            .body{
+                overflow-y: scroll;
+            }
             .berthausis-content h1 {
                 font-size: 1.2rem;
             }
@@ -233,6 +252,43 @@
                 font-size: 0.8rem;
             }
         }
+        @media (min-width: 1900px) {
+    .berthausis-container {
+        max-width: 1400px;
+        height: 85%; /* Ajusta a altura para telas maiores */
+        padding: 30px;
+    }
+
+    .berthausis-content h1 {
+        font-size: 2.5rem; /* Aumenta o tamanho do título */
+    }
+
+    .berthausis-content p {
+        font-size: 1.2rem; /* Aumenta o tamanho do texto */
+    }
+
+    .services {
+        gap: 40px; /* Aumenta o espaçamento entre os elementos */
+    }
+
+    .container {
+        width: 40%; /* Ajusta a largura dos containers */
+        padding: 30px; /* Adiciona mais espaçamento interno */
+    }
+
+    .icon img {
+        width: 150px; /* Aumenta o tamanho dos ícones */
+    }
+
+    .title {
+        font-size: 1.6rem; /* Aumenta o tamanho dos títulos */
+    }
+
+    .description {
+        font-size: 1rem; /* Ajusta o tamanho da descrição */
+    }
+}
+
     </style>
 </head>
 <body>
@@ -240,8 +296,7 @@
         <div class="berthausis-content">
             <h1>Bem-Vindo ao Grupo Berthausis</h1>
             <p>
-                Na Berthausis, acreditamos que a tecnologia pode ser uma poderosa aliada na promoção da saúde mental. Desenvolvemos soluções digitais que equilibram a produtividade com o bem-estar, criando ambientes de trabalho mais humanos, sustentáveis e acolhedores para todos.
-            </p>
+                A BERTHAUSIS apoia o crescimento e desenvolvimento da sua empresa com soluções em tecnologia, soluções em educação corporativa e bem-estar emocional. Acesse nossas soluções logo abaixo.           </p>
         </div>
     </div>
     
@@ -263,10 +318,10 @@
             </div>
             <div class="title">Flavia Bertholdi</div>
             <div class="description">
-                Ajudamos sua empresa a alcançar resultados com soluções digitais personalizadas.
-            </div>
+                Soluções em Educação Corporativa e Bem-estar Emocional.</div>
             <a href="home.html" class="button">Saiba Mais</a>
         </div>
     </div>
+
 </body>
 </html>
