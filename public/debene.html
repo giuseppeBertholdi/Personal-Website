@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeBene Tecnologia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #ffffff;
@@ -12,7 +13,8 @@
             --text-color: #333333;
             --background-color: #f9f9f9;
             --button-hover: #0056b3;
-            --font-family: 'Arial', sans-serif;
+            --font-title: 'Merriweather', serif;
+            --font-body: 'Lato', sans-serif;
         }
 
         * {
@@ -22,91 +24,101 @@
         }
 
         body {
-            font-family: var(--font-family);
+            font-family: var(--font-body);
             color: var(--text-color);
             background-color: var(--background-color);
-            line-height: 1.6;
+            line-height: 1.5;
         }
+
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 2rem;
+            padding: 1rem 2rem;
             background-color: var(--primary-color);
             border-bottom: 1px solid #ddd;
             position: sticky;
             top: 0;
-            height: 15vh;
             z-index: 1000;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaço entre o texto e a logo */
-}
-
-.logo {
-    font-size: 2.1rem;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    color: var(--secondary-color);
-}
-
-.iconic {
-    width: 100px; /* Ajuste do tamanho da logo */
-    height: auto;
-    object-fit: contain;
-}
-
-
-        header nav {
-            display: flex;
-            gap: 1rem;
         }
 
-        header nav a {
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .iconic {
+            width: 60px;
+            height: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
             color: var(--text-color);
             text-decoration: none;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
-        header nav a:hover {
+        nav a:hover {
             background-color: var(--secondary-color);
             color: #fff;
-            border-radius: 5px;
         }
-        section {
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
-    margin-top: 30px; /* Aumentado o espaçamento superior */
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-}
 
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            flex: 1 1 calc(33.33% - 1rem);
+            min-width: 300px;
+            padding: 1rem;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
 
         section h2 {
-            font-size: 2.1rem;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-family: var(--font-title);
+            font-size: 1.5rem;
             color: var(--secondary-color);
             margin-bottom: 1rem;
             border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            display: inline-block;
+            padding-bottom: 0.3rem;
         }
 
         ul {
             list-style: none;
-            padding-left: 1rem;
+            padding: 0;
         }
 
         ul li {
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.8rem;
+            font-family: var(--font-body);
         }
 
         ul li strong {
@@ -114,6 +126,8 @@
         }
 
         .button-container {
+            margin-top: 10px;
+            font-weight: bold;
             text-align: center;
             margin-top: 1rem;
         }
@@ -122,9 +136,8 @@
             text-decoration: none;
             color: #fff;
             background-color: var(--secondary-color);
-            padding: 0.6rem 1.5rem;
-            font-size: 1rem;
-            font-weight: bold;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
@@ -136,22 +149,75 @@
         footer {
             text-align: center;
             padding: 1rem;
-            background-color: var(--primary-color);
-            border-top: 1px solid #ddd;
-            font-size: 0.9rem;
-        }
-
-        footer p {
-            margin: 0.5rem 0;
+            background-color: var(--secondary-color);
+            color: #fff;
+            font-size: 0.85rem;
         }
 
         footer a {
-            color: var(--secondary-color);
+            color: #ffd700;
             text-decoration: none;
+            font-weight: bold;
         }
 
         footer a:hover {
             text-decoration: underline;
+        }
+
+        #contact {
+            width: 100%;
+            text-align: center;
+            background-color: var(--background-color);
+            padding: 2rem 1rem;
+            border-top: 1px solid #ddd;
+            border-radius: 8px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact p {
+            margin-bottom: 0.5rem;
+        }
+
+        #contact a {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        #contact a:hover {
+            text-decoration: underline;
+            color: var(--button-hover);
+        }
+
+        /* Ajuste para remover espaço em branco */
+        #about {
+            flex: 1 1 calc(25% - 1rem); /* Ocupa 25% do espaço */
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.8rem;
+            }
+
+            section {
+                flex: 1 1 100%;
+            }
+
+            .logo-container {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            #contact {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -167,57 +233,59 @@
             <a href="#contact">Contato</a>
         </nav>
     </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>Contrato de Suporte</h2>
+            <ul style="list-style-type: disc; margin-left: 1.5rem;">
+                <li>TOTVS Datasul</li>
+                <li>Progress</li>
+                <li>SQL Server</li>
+                <li>Oracle</li>
+                <li>PostgreSQL</li>
+                <li>Sistemas Satélites</li>
+            </ul>
+            <div class="button-container">
+                <a href="#contact">Solicite uma Proposta</a>
+            </div>
+        </section>
+        
     
-
-    <section id="about">
-        <h2>Contrato de Suporte</h2>
-        <ul>
-            <li>TOTVS Datasul</li>
-            <li>Progress</li>
-            <li>SQL Server</li>
-            <li>Oracle</li>
-            <li>PostgreSQL</li>
-            <li>Sistemas Satélites</li>
-        </ul>
-        <div class="button-container">
-            <a href="#contact">Solicite uma Proposta</a>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Projetos sob Demanda</h2>
-        <ul>
-            <li><strong>TOTVS Datasul:</strong>
-                <ul>
-                    <li>Atualização de patches de releases;</li>
-                    <li>Configuração de ambientes de testes e homologação;</li>
-                    <li>Implementação do Task Manager para Windows e Linux;</li>
-                    <li>Configuração de sistemas (Tomcat, License Server, etc).</li>
-                </ul>
-            </li>
-            <li><strong>Progress:</strong>
-                <ul>
-                    <li>Tuning de banco de dados e scripts;</li>
-                    <li>Configuração de backup online e offline;</li>
-                    <li>Restauração automática para ambientes de teste;</li>
-                    <li>Suporte a analistas de sistemas.</li>
-                </ul>
-            </li>
-            <li><strong>SQL Server, Oracle e PostgreSQL:</strong>
-                <ul>
-                    <li>Instalação e tuning de ambientes e querys.</li>
-                </ul>
-            </li>
-            <li><strong>Sistemas Satélites:</strong>
-                <ul>
-                    <li>Configuração e integração de sistemas (Quirius, Fusion, etc).</li>
-                </ul>
-            </li>
-        </ul>
-        <div class="button-container">
-            <a href="#contact">Solicite uma Proposta</a>
-        </div>
-    </section>
+        <section id="projects">
+            <h2>Projetos sob Demanda</h2>
+            <ul>
+                <li><strong>TOTVS Datasul:</strong>
+                    <ul>
+                        <li>Atualização de patches de releases;</li>
+                        <li>Configuração de ambientes de testes e homologação;</li>
+                        <li>Implementação do Task Manager para Windows e Linux;</li>
+                        <li>Configuração de sistemas (Tomcat, License Server, etc).</li>
+                    </ul>
+                </li>
+                <li><strong>Progress:</strong>
+                    <ul>
+                        <li>Tuning de banco de dados e scripts;</li>
+                        <li>Configuração de backup online e offline;</li>
+                        <li>Restauração automática para ambientes de teste;</li>
+                        <li>Suporte a analistas de sistemas.</li>
+                    </ul>
+                </li>
+                <li><strong>SQL Server, Oracle e PostgreSQL:</strong>
+                    <ul>
+                        <li>Instalação e tuning de ambientes e querys.</li>
+                    </ul>
+                </li>
+                <li><strong>Sistemas Satélites:</strong>
+                    <ul>
+                        <li>Configuração e integração de sistemas (Quirius, Fusion, etc).</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="button-container">
+                <a href="#contact">Solicite uma Proposta</a>
+            </div>
+        </section>
+    </main>
 
     <section id="contact">
         <h2>Contato</h2>
