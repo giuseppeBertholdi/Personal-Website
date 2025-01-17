@@ -246,6 +246,127 @@
         z-index: 1; /* Coloca o texto acima das bolas */
     }
 
+    /* Estilos gerais para dispositivos menores (telas pequenas) */
+@media (max-width: 768px) {
+    .berthausis-container {
+        padding: 10px;
+    }
+
+    .berthausis-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .berthausis-content p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Aumenta o espaço entre os containers em telas pequenas */
+        padding: 20px 0;
+    }
+
+    .container {
+        width: 90%; /* Faz os containers ocuparem mais largura da tela */
+        height: auto; /* Deixa a altura flexível para conteúdo */
+        padding: 20px;
+    }
+
+    .icon img {
+        width: 100px;
+        height: 80px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    button {
+        width: 100%;
+        padding: 0.8em 1.5em;
+        font-size: 1.2rem;
+    }
+
+    button a {
+        font-size: 1.2rem;
+    }
+
+    .container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Estilos para telas muito pequenas (ex: smartphones em modo retrato) */
+@media (max-width: 480px) {
+    .berthausis-container {
+        padding: 5px;
+    }
+
+    .berthausis-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .berthausis-content p {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+
+    .services {
+        gap: 15px;
+    }
+
+    .container {
+        width: 100%; /* Os containers ocupam toda a largura */
+        height: auto;
+        padding: 15px;
+    }
+
+    .icon img {
+        width: 80px;
+        height: 60px;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+
+    button {
+        width: 100%;
+        padding: 1em 1.2em;
+        font-size: 1.1rem;
+    }
+
+    button a {
+        font-size: 1.1rem;
+    }
+
+    .container:hover {
+        transform: translateY(-3px); /* Menos impacto no hover em telas pequenas */
+    }
+}
+
+
     </style>
 </head>
 <body>
