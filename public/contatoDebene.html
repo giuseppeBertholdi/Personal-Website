@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <style>
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: #007BFF;
+            --accent-color: #0056b3;
+            --text-color: #333333;
+            --background-color: #f9f9f9;
+            --button-hover: #0056b3;
+            --font-title: 'Merriweather', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin-bottom: 3rem;
+            margin: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .iconic {
+            width: 60px;
+            height: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        #contact {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            background-color: var(--background-color);
+            padding: 2rem 1rem;
+            border-top: 1px solid #ddd;
+            border-radius: 8px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact h2 {
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        #contact p {
+            margin-bottom: 0.5rem;
+        }
+
+        #contact a {
+            font-weight: bold;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        #contact a:hover {
+            text-decoration: underline;
+            color: var(--button-hover);
+        }
+        footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-size: 0.85rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.8rem;
+            }
+
+            .logo-container {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/debene-removebg-preview.png" alt="DeBene Tecnologia" class="iconic">
+            <div class="logo">DeBene Tecnologia</div>
+        </div>
+        <nav>
+            <a href="debene.html">Página Inicial</a>
+        </nav>
+    </header>
+
+    <section id="contact">
+        <h2>Contato</h2>
+        <p>Email: <a href="mailto:debenetec@outlook.com">debenetec@outlook.com</a></p>
+    </section>
+    <footer>
+        <p>&copy; 2025 <a href="#">DeBene Tecnologia</a> - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

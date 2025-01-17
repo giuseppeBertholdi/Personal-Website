@@ -42,6 +42,27 @@
             z-index: 1000;
         }
 
+        .lightning {
+            position: absolute;
+            top: 0;
+            left: -200%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+            filter: blur(8px);
+            animation: lightning-strike 2s infinite;
+        }
+
+        /* Keyframes para o raio */
+        @keyframes lightning-strike {
+            0%, 70%, 100% {
+                transform: translateX(-200%);
+            }
+            72%, 74% {
+                transform: translateX(100%);
+            }
+        }
+
         .logo-container {
             display: flex;
             align-items: center;
@@ -164,31 +185,6 @@
             text-decoration: underline;
         }
 
-        #contact {
-            width: 100%;
-            text-align: center;
-            background-color: var(--background-color);
-            padding: 2rem 1rem;
-            border-top: 1px solid #ddd;
-            border-radius: 8px;
-            margin-top: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        #contact p {
-            margin-bottom: 0.5rem;
-        }
-
-        #contact a {
-            font-weight: bold;
-            color: var(--accent-color);
-        }
-
-        #contact a:hover {
-            text-decoration: underline;
-            color: var(--button-hover);
-        }
-
         /* Ajuste para remover espaço em branco */
         #about {
             flex: 1 1 calc(25% - 1rem); /* Ocupa 25% do espaço */
@@ -228,15 +224,13 @@
             <div class="logo">DeBene Tecnologia</div>
         </div>
         <nav>
-            <a href="#about">Sobre</a>
-            <a href="#projects">Projetos</a>
-            <a href="#contact">Contato</a>
+            <a href="mailto:debenetec@outlook.com">Contato</a>
         </nav>
     </header>
 
     <main class="container">
         <section id="about">
-            <h2>Contrato de Suporte</h2>
+            <h2>Atuação fora do horário comercial:</h2>
             <ul style="list-style-type: disc; margin-left: 1.5rem;">
                 <li>TOTVS Datasul</li>
                 <li>Progress</li>
@@ -246,52 +240,47 @@
                 <li>Sistemas Satélites</li>
             </ul>
             <div class="button-container">
-                <a href="#contact">Solicite uma Proposta</a>
+                <a href="mailto:debenetec@outlook.com">Solicite uma Proposta</a>
             </div>
         </section>
         
-    
         <section id="projects">
             <h2>Projetos sob Demanda</h2>
             <ul>
                 <li><strong>TOTVS Datasul:</strong>
-                    <ul>
-                        <li>Atualização de patches de releases;</li>
-                        <li>Configuração de ambientes de testes e homologação;</li>
-                        <li>Implementação do Task Manager para Windows e Linux;</li>
-                        <li>Configuração de sistemas (Tomcat, License Server, etc).</li>
+                    <ul style="list-style-type: disc; margin-left: 1.5rem;">
+                        <li>Atualização de patches e releases;</li>
+                        <li>Atualização e Configuração de Ambientes de Testes;</li>
+                        <li>Implementação do Task Manager (Novo Rpw) Windows e Linux;</li>
+                        <li>Configuração e Atualização do Tomcat, License Server, TSS, TAF, TimeOut, Desconecta Usuários.</li>
                     </ul>
                 </li>
                 <li><strong>Progress:</strong>
-                    <ul>
-                        <li>Tuning de banco de dados e scripts;</li>
-                        <li>Configuração de backup online e offline;</li>
-                        <li>Restauração automática para ambientes de teste;</li>
-                        <li>Suporte a analistas de sistemas.</li>
+                    <ul style="list-style-type: disc; margin-left: 1.5rem;">
+                        <li>Tuning de Banco de Dados (Parâmetros de Carga, Dump-load, Performance, etc);</li>
+                        <li>Criação e ajuste de scripts para administração dos ambientes de banco de dados;</li>
+                        <li>Configuração e validação de backup on-line e offline;</li>
+                        <li>Restauração automática do backup da produção em ambientes de testes (Cópia Produção);</li>
+                        <li>Suporte e Apoio aos Analistas de Sistemas.</li>
                     </ul>
                 </li>
                 <li><strong>SQL Server, Oracle e PostgreSQL:</strong>
-                    <ul>
-                        <li>Instalação e tuning de ambientes e querys.</li>
+                    <ul style="list-style-type: disc; margin-left: 1.5rem;">
+                        <li>Instalação, configuração e Tuning de querys e Ambientes.</li>
                     </ul>
                 </li>
                 <li><strong>Sistemas Satélites:</strong>
-                    <ul>
-                        <li>Configuração e integração de sistemas (Quirius, Fusion, etc).</li>
+                    <ul style="list-style-type: disc; margin-left: 1.5rem;">
+                        <li>Instalação, configuração e integração de Sistemas e Banco de Dados;</li>
+                        <li>Exemplo: Quirius, Fusion, DepsNet, GKO, Drummer, SeSuite, IEDPLAN, OSGT.</li>
                     </ul>
                 </li>
             </ul>
             <div class="button-container">
-                <a href="#contact">Solicite uma Proposta</a>
+                <a href="mailto:debenetec@outlook.com">Solicite uma Proposta</a>
             </div>
         </section>
     </main>
-
-    <section id="contact">
-        <h2>Contato</h2>
-        <p>Email: <a href="mailto:geferson.bertholdi@outlook.com">geferson.bertholdi@outlook.com</a></p>
-        <p>Telefone: <a href="tel:+5547999262633">+55 47 99926-2633</a></p>
-    </section>
 
     <footer>
         <p>&copy; 2025 <a href="#">DeBene Tecnologia</a> - Todos os direitos reservados.</p>

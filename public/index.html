@@ -171,65 +171,80 @@
         }
 
  /* From Uiverse.io by KINGFRESS */ 
-button {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-transform: uppercase;  color: #333;
-  background: #f5f7fa; 
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);          
-  padding: 1em 2em;
-  border: none;
-  border-radius: .6rem;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  width: 500px;
-  height: 10vh;
-  margin-top: 10px;
-}
+ .text {
+        text-decoration: none; /* Remove o sublinhado */
+        color: inherit; /* Mantém a cor herdada do botão */
+    }
+    /* Botão principal */
+    button {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 1.4rem;
+        text-decoration: none; /* Remove sublinhado */
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #333;
+        background: #f5f7fa;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        padding: 1em 2em;
+        border: none;
+        border-radius: 0.6rem;
+        position: relative; /* Necessário para posicionamento absoluto das bolas */
+        cursor: pointer;
+        overflow: hidden; /* Garante que as bolas fiquem dentro do botão */
+        width: 500px;
+        height: 10vh;
+        margin-top: 10px;
+        display: flex; /* Usado para alinhar o texto */
+        justify-content: center;
+        align-items: center;
+    }
 
-button span:not(:nth-child(6)) {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 30px;
-  width: 30px;
-  background-color: #0caded;
-  border-radius: 50%;
-  transition: .6s ease;
-}
+    /* Bolas animadas */
+    button span {
+        position: absolute; /* Posiciona as bolas em relação ao botão */
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 30px;
+        width: 30px;
+        background-color: #0caded;
+        border-radius: 50%;
+        transition: 0.6s ease;
+        z-index: 0; /* Coloca as bolas atrás do texto */
+    }
 
-button span:nth-child(6) {
-  position: relative;
-}
+    button span:nth-child(1) {
+        transform: translate(-3.3em, -4em);
+    }
 
-button span:nth-child(1) {
-  transform: translate(-3.3em, -4em);
-}
+    button span:nth-child(2) {
+        transform: translate(-6em, 1.3em);
+    }
 
-button span:nth-child(2) {
-  transform: translate(-6em, 1.3em);
-}
+    button span:nth-child(3) {
+        transform: translate(-0.2em, 1.8em);
+    }
 
-button span:nth-child(3) {
-  transform: translate(-.2em, 1.8em);
-}
+    button span:nth-child(4) {
+        transform: translate(3.5em, 1.4em);
+    }
 
-button span:nth-child(4) {
-  transform: translate(3.5em, 1.4em);
-}
+    button span:nth-child(5) {
+        transform: translate(3.5em, -3.8em);
+    }
 
-button span:nth-child(5) {
-  transform: translate(3.5em, -3.8em);
-}
+    button:hover span {
+        transform: translate(-50%, -50%) scale(4); /* Expande as bolas */
+        transition: 1.5s ease;
+    }
 
-button:hover span:not(:nth-child(6)) {
-  transform: translate(-50%, -50%) scale(4);
-  transition: 1.5s ease;
-}
-  
+    /* Texto do botão */
+    button a {
+        text-decoration: none; /* Remove sublinhado */
+        color: inherit; /* Mantém a cor do botão */
+        position: relative; /* Garante que o texto fique acima das bolas */
+        z-index: 1; /* Coloca o texto acima das bolas */
+    }
 
     </style>
 </head>
@@ -272,7 +287,7 @@ button:hover span:not(:nth-child(6)) {
         <span class="circle3"></span>
         <span class="circle4"></span>
         <span class="circle5"></span>
-        <span class="text">Entre em contato conosco</span>
+        <a href="mailto:berthausis@outloook.com" class="text">Entre em contato conosco</a>
     </button>
 
 </body>
