@@ -104,6 +104,10 @@ app.get('/contato', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'contato.html'));
 });
 
+app.get('/politica', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'politica.html'));
+});
+
 // Inicia o servidor
 const PORT = 3000;
 app.listen(PORT, () => {
